@@ -78,18 +78,24 @@ else{
 console.log("************************************");
 //wap to print find maximum from 3 using nested if and else.
 
-let A = 23;
-let B = 11;
-let C = 09;
+let a = 23;
+let b = 11;
+let c = 9;
 
-if (A > B && A > C){
-    console.log("A is max !");
-}
-else{
-    if( B > A && B > C){
-        console.log("B is max !");
+
+if (a > b){
+    if(a > c){
+        console.log("a is maximum");
     }
     else{
-        console.log("C is max !");
+        console.log("c is maximum");
+    }
+}
+else{
+    if(b > c){
+        console.log("b is maximum");
+    }
+    else{
+        console.log("c is maximum");
     }
 }
