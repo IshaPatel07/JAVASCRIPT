@@ -36,11 +36,11 @@ console.log("e =", e);
 //   "4. write a javascript program to convert fehrenheit temprerture to celsius.",
 // );
 
-// let F = 60;
+// let F = 77;
 
-// let C = ((c - 32) * 5) / 9;
+// let C = (F - 32) * 5/9;
 
-// console.log("celsius is", F);
+// console.log("celsius is", C);
 
 console.log(
   "5. write a javascript program to calculate the area of rectengle using lenth and width.",
@@ -65,4 +65,37 @@ let SI = (P * R * T) / 100;
 
 console.log("simple interest is =", SI);
 
-console.log("8. write a javascript program to calculate .");
+console.log(
+  "8. write a javascript program to calculate the permeter of a rectangle.",
+);
+
+let Lenth = 23;
+let Width = 11;
+
+let permeter = 2 * (Lenth + Width);
+
+console.log("permeter is =", permeter);
+
+console.log(
+  "9. write a javascript program to calculate the sqare of a number.",
+);
+
+let num1 = 23;
+
+let square = num1 * num1;
+console.log("square is =", square);
+
+console.log(
+  "10. write a javascript program to calculate the cube of a number.",
+);
+
+let num2 = 23;
+
+let cube = num2 * num2 * num2;
+
+console.log("cube is =", cube);
+
+
+console.log(
+  "11. write a javascript program to calculate the sqare of a number.",
+);
