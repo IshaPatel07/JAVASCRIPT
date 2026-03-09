@@ -95,7 +95,102 @@ let cube = num2 * num2 * num2;
 
 console.log("cube is =", cube);
 
+console.log(
+  "11. write a javascript program to find remainder when one number is divided by another.",
+);
+
+let num3 = 29;
+let num4 = 26;
+
+let div = num3 % num4;
+
+console.log("remainder is =", div);
+
+console.log("12. write a javascript program to convert minutes into second.");
+
+let min = 20;
+
+let sec = min * 60;
+
+console.log("second is =", sec);
+
+console.log("13. write a javascript program to convert hours into minuts.");
+
+let hours = 4;
+
+let minuts = hours * 60;
+
+console.log("minuts are =", minuts);
+
+console.log("14. write a javascript program to find average of three number.");
+
+let i = 23;
+let s = 42;
+let r = 31;
+
+let average = (i + s + r) / 3;
+
+console.log("average is =", average);
+
+console.log("15. write a javascript program to convert kilometers into meters");
+
+let km = 4;
+
+let meter = km * 1000;
+
+console.log("meters are =", meter);
+
+console.log("16. write a javascript program to convert meter into centimeter.");
+
+let m = 5;
+
+let cm = m * 100;
+console.log("centimeter is =", cm);
 
 console.log(
-  "11. write a javascript program to calculate the sqare of a number.",
+  "17. write a javascript program to calculate total marks and percentage of 5 subject.",
 );
+
+let hid = 40;
+let guj = 50;
+let eng = 60;
+let math = 45;
+let sci = 56;
+
+let marks = hid + guj + eng + math + sci;
+let per = marks / 5;
+
+console.log("Total marks =", marks);
+console.log("percentage =", per);
+
+console.log(
+  "18. write a javascript program to increment number using increment operator.",
+);
+
+let num = 23;
+
+num++;
+
+console.log("increment is", num);
+
+console.log(
+  "19. write a javascript program to decrement number using decrement operator.",
+);
+
+let n = 23;
+
+n--;
+
+console.log("decrement is ", n);
+
+console.log(
+  "20. write a javascript program to chek if anumber is even or odd using the moduls operator.",
+);
+
+let g = 6;
+
+if (g % 2 == 0) {
+  console.log("number is even");
+} else {
+  console.log("number is odd");
+}
