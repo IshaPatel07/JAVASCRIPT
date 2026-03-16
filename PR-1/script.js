@@ -23,24 +23,24 @@ d = d - e;
 console.log("d =", d);
 console.log("e =", e);
 
-// console.log(
-//   "3. write a javascript program to convert celsius  temprerture to fahrenheit.",
-// );
+console.log(
+  "3. write a javascript program to convert celsius  temprerture to fahrenheit.",
+);
 
-// let c = 30;
+let c = 30;
 
-// let f = (c * 9 / 5) + 32;
-// console.log("fehrenheit is", f);
+let f = (c * 9) / 5 + 32;
+console.log("fehrenheit is", f);
 
-// console.log(
-//   "4. write a javascript program to convert fehrenheit temprerture to celsius.",
-// );
+console.log(
+  "4. write a javascript program to convert fehrenheit temprerture to celsius.",
+);
 
-// let F = 77;
+let F = 77;
 
-// let C = (F - 32) * 5/9;
+let C = ((F - 32) * 5) / 9;
 
-// console.log("celsius is", C);
+console.log("celsius is", C);
 
 console.log(
   "5. write a javascript program to calculate the area of rectengle using lenth and width.",
@@ -52,6 +52,16 @@ let width = 30;
 let area = lenth * width;
 
 console.log("rectangle area is =", area);
+
+console.log(
+  "6. write a javascript program to calculate the area of circle using the formula PIr2 ",
+);
+
+let r = 7;
+
+let Area = 3.14 * r * r;
+
+console.log("Area of circle =", Area);
 
 console.log(
   "7. write a javascript program to calculate the simple intrest using formula SI = (P*R*T)/100.",
@@ -126,9 +136,9 @@ console.log("14. write a javascript program to find average of three number.");
 
 let i = 23;
 let s = 42;
-let r = 31;
+let k = 31;
 
-let average = (i + s + r) / 3;
+let average = (i + s + k) / 3;
 
 console.log("average is =", average);
 
@@ -154,7 +164,7 @@ console.log(
 let hid = 40;
 let guj = 50;
 let eng = 60;
-let math = 45;
+let math = 80;
 let sci = 56;
 
 let marks = hid + guj + eng + math + sci;
