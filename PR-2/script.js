@@ -177,8 +177,11 @@ console.log("square of all =", square);
 
 console.log("13. murge two array");
 
-function MurgeArray(arr1, arr2) {
-  return arr1.concat(arr2);
-}
+// function MurgeArray(arr1, arr2) {
+//   return arr1.concat(arr2);
+// }
 
-MurgeArray(array, array);
+// MurgeArray(array);
+
+
+
