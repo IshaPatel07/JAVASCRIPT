@@ -175,7 +175,7 @@ function SquareOf(arr) {
 const square = SquareOf(array);
 console.log("square of all =", square);
 
-console.log("13. murge two array");
+// console.log("13. murge two array");
 
 // function MurgeArray(arr1, arr2) {
 //   return arr1.concat(arr2);
@@ -183,5 +183,46 @@ console.log("13. murge two array");
 
 // MurgeArray(array);
 
+console.log("14. check value extist");
 
+function ExistValue(arr, value1) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === value1) {
+      return true;
+    }
+  }
+  return false;
+}
 
+let value1 = 34;
+const exist = ExistValue(array, value1);
+console.log(value1, "= exist is", exist);
+
+console.log("15.array in ascending order");
+
+function AscendingArr(arr) {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i; j < array.length; j++) {
+      if (i > j) {
+        let sort = i;
+        i = j;
+        j = sort;
+      }
+    }
+  }
+  return array;
+}
+//{
+//   arr.forEach((i) => {
+//     arr.forEach((j) => {
+//       if (i > j) {
+//         let sort = i;
+//         i = j;
+//         j = sort;
+//       }
+//     });
+//   });
+// }
+
+const ascending = AscendingArr(array);
+console.log("ascending order is =", ascending);
