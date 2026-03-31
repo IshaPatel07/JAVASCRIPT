@@ -521,13 +521,23 @@ btnlike.addEventListener("click", () => {
   // const data = quotesList[index];
   // const str = JSON.stringify(data);
   // localStorage.setItem("favlist", str);
-  // alert("❤️ you like this quote!!");
   //  localStorage.setItem("favlist", JSON.stringify(quotesList[index]));
 
   // to store array
 
   const favquote = JSON.parse(localStorage.getItem("favlist"));
+
+  const res = favquote.findIndex(
+    (quote) => quote.quote == quotesList[index].quote,
+  );
+
+  if (res == -1) {
+    favquote.push(quotesList[index]);
+    localStorage.setItem("favlist", JSON.stringify(favquote));
+     alert("❤️ you like this quote! added on favlist!!");
+  } else {
+    alert("quote is already exist !!");
+  }
+
   //parse = to convert string into object/array
-  favquote.push(quotesList[index]);
-  localStorage.setItem("favlist", JSON.stringify(favquote));
 });

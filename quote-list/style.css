@@ -1,0 +1,28 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+ body {
+  background: linear-gradient(135deg, #f7b096, #f492f0);
+  display: flex;
+} 
+
+
+
+
+.container{
+  height: 50vh;
+  width: 100%; 
+  background-color: rgb(233, 151, 151);
+  margin: auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-box{
+  text-align: center;
+}
