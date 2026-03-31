@@ -466,21 +466,21 @@ const quotesList = [
   },
 ];
 
-const backgrounds = [
-  "https://www.nasa.gov/wp-content/uploads/2023/06/jwst-flickr-52259221868-30e1c78f0c-4k.jpg?w=2048 ",
-  "https://img.freepik.com/free-photo/courage-man-jump-through-gap-hill-business-concept-idea_1323-262.jpg?semt=ais_incoming&w=740&q=80",
-  "https://img.freepik.com/free-photo/closeup-shot-beautiful-butterfly-with-interesting-textures-orange-petaled-flower_181624-7640.jpg?semt=ais_hybrid&w=740&q=80",
-  "https://cdn.pixabay.com/photo/2016/11/21/06/53/beautiful-natural-image-1844362_640.jpg",
-  "https://cdn.pixabay.com/photo/2016/04/05/11/04/india-1309206_1280.jpg",
-  "https://img.freepik.com/free-photo/abstract-transparent-vivid-autumn-leaf_23-2148239712.jpg?semt=ais_hybrid&w=740&q=80",
-  "https://images.pexels.com/photos/1054655/pexels-photo-1054655.jpeg",
-  "https://png.pngtree.com/thumb_back/fh260/background/20240522/pngtree-abstract-cloudy-background-beautiful-natural-streaks-of-sky-and-clouds-red-image_15684333.jpg",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvS8XRlRIzQ_lvu0EZy88MrE-UkMYfDTPjYQ&s",
-  "https://media.istockphoto.com/id/610041376/photo/beautiful-sunrise-over-the-sea.jpg?s=612x612&w=0&k=20&c=R3Tcc6HKc1ixPrBc7qXvXFCicm8jLMMlT99MfmchLNA=",
-  "https://www.w3schools.com/w3css/img_lights.jpg",
-];
+// const backgrounds = [
+//   "https://www.nasa.gov/wp-content/uploads/2023/06/jwst-flickr-52259221868-30e1c78f0c-4k.jpg?w=2048 ",
+//   "https://img.freepik.com/free-photo/courage-man-jump-through-gap-hill-business-concept-idea_1323-262.jpg?semt=ais_incoming&w=740&q=80",
+//   "https://img.freepik.com/free-photo/closeup-shot-beautiful-butterfly-with-interesting-textures-orange-petaled-flower_181624-7640.jpg?semt=ais_hybrid&w=740&q=80",
+//   "https://cdn.pixabay.com/photo/2016/11/21/06/53/beautiful-natural-image-1844362_640.jpg",
+//   "https://cdn.pixabay.com/photo/2016/04/05/11/04/india-1309206_1280.jpg",
+//   "https://img.freepik.com/free-photo/abstract-transparent-vivid-autumn-leaf_23-2148239712.jpg?semt=ais_hybrid&w=740&q=80",
+//   "https://images.pexels.com/photos/1054655/pexels-photo-1054655.jpeg",
+//   "https://png.pngtree.com/thumb_back/fh260/background/20240522/pngtree-abstract-cloudy-background-beautiful-natural-streaks-of-sky-and-clouds-red-image_15684333.jpg",
+//   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvS8XRlRIzQ_lvu0EZy88MrE-UkMYfDTPjYQ&s",
+//   "https://media.istockphoto.com/id/610041376/photo/beautiful-sunrise-over-the-sea.jpg?s=612x612&w=0&k=20&c=R3Tcc6HKc1ixPrBc7qXvXFCicm8jLMMlT99MfmchLNA=",
+//   "https://www.w3schools.com/w3css/img_lights.jpg",
+// ];
 
-const container = document.getElementById("container");
+// const container = document.getElementById("container");
 const quotetext = document.getElementById("quote-text");
 const authortext = document.getElementById("author-text");
 
@@ -488,19 +488,15 @@ const btnback = document.getElementById("btn-back");
 const btnlike = document.getElementById("btn-like");
 const btnnext = document.getElementById("btn-next");
 
-let index = parseInt(localStorage.getItem("index"));
+let index = Number(localStorage.getItem("index"));
 
 function displayQuotes() {
   quotetext.textContent = quotesList[index].quote;
   authortext.textContent = quotesList[index].author;
-  container.style.backgroundImage = `url(${backgrounds[0]}) no repeat center/cover`;
+  //container.style.backgroundImage = `url(${backgrounds[0]}) no repeat center/cover`;
 }
 
 displayQuotes();
-
-//document.body.style.background = backgrounds[0];
-
-//btnback.classList = "btn btn-outline-warning d-none";
 
 btnnext.addEventListener("click", () => {
   index++;
@@ -520,5 +516,18 @@ btnback.addEventListener("click", () => {
 });
 
 btnlike.addEventListener("click", () => {
-  alert("❤️ you like this quote!!");
+  //to store only one quote
+
+  // const data = quotesList[index];
+  // const str = JSON.stringify(data);
+  // localStorage.setItem("favlist", str);
+  // alert("❤️ you like this quote!!");
+  //  localStorage.setItem("favlist", JSON.stringify(quotesList[index]));
+
+  // to store array
+
+  const favquote = JSON.parse(localStorage.getItem("favlist"));
+  //parse = to convert string into object/array
+  favquote.push(quotesList[index]);
+  localStorage.setItem("favlist", JSON.stringify(favquote));
 });
