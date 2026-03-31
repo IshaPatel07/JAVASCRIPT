@@ -534,7 +534,7 @@ btnlike.addEventListener("click", () => {
   if (res == -1) {
     favquote.push(quotesList[index]);
     localStorage.setItem("favlist", JSON.stringify(favquote));
-     alert("❤️ you like this quote! added on favlist!!");
+    alert("❤️ you like this quote! added on favlist!!");
   } else {
     alert("quote is already exist !!");
   }
