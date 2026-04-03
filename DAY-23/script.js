@@ -1,5 +1,6 @@
 // https://www.googleapis.com/books/v1/volumes?q=5%20am%20club+intitle:keyes&key=AIzaSyDv8ylOZ_72jImC_DZeFFY_g_9HLSKqQbg
 
+
 const ApiKey = "AIzaSyDv8ylOZ_72jImC_DZeFFY_g_9HLSKqQbg";
 
 const searchText = document.getElementById("search-text");
@@ -7,13 +8,7 @@ const searchBtn = document.getElementById("search-btn");
 const booksBox = document.getElementById("books-box");
 
 function displayBooks(books) {
-  //   if (books.length == 0 || books == null) {
-  //     const p = document.createElement("p");
-  //     p.textContent = "loading...";
-  //     booksBox.appendChild(p);
-  //     return;
-  //   }
-
+  
   books.map((book) => {
     console.log(book.volumeInfo.authors);
     const div = document.createElement("div");
