@@ -516,13 +516,7 @@ btnback.addEventListener("click", () => {
 });
 
 btnlike.addEventListener("click", () => {
-  //to store only one quote
-
-  // const data = quotesList[index];
-  // const str = JSON.stringify(data);
-  // localStorage.setItem("favlist", str);
-  //  localStorage.setItem("favlist", JSON.stringify(quotesList[index]));
-
+  
   // to store array
 
   const favquote = JSON.parse(localStorage.getItem("favlist"));
@@ -540,4 +534,12 @@ btnlike.addEventListener("click", () => {
   }
 
   //parse = to convert string into object/array
+
+  //to store only one quote
+
+  // const data = quotesList[index];
+  // const str = JSON.stringify(data);
+  // localStorage.setItem("favlist", str);
+  //  localStorage.setItem("favlist", JSON.stringify(quotesList[index]));
+
 });
