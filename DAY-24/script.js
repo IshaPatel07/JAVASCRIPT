@@ -12,7 +12,9 @@ const searchBtn = document.getElementById("search-movie");
 const movieBox = document.getElementById("movie-box");
 
 function displayMovie(movie) {
-    
+  moviePoster.textContent = movie.Poster;
+  movieTitle.textContent = movie.Title;
+  moviePlot.textContent = movie.Plot;
 }
 
 function fetchMovies() {
