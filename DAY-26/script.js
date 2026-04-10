@@ -22,13 +22,13 @@ const months = [
 ];
 
 const days = [
+  "Sunday",
   "Monday",
   "Tuesday",
   "Wednesday",
   "Thusday",
   "Friday",
   "Satday",
-  "Sunday",
 ];
 
 setInterval(() => {
