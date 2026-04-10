@@ -1,43 +1,74 @@
 const dt = document.getElementById("dt");
+// const hours = document.getElementById("hou");
+// const minuts = document.getElementById("min");
+// const seconds = document.getElementById("sec");
 const time = document.getElementById("time");
+const dy = document.getElementById("d");
 
-// days = [
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-//   "",
-// ];
+// const month = new date();
+const months = [
+  "Jan",
+  "Fab",
+  "mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sap",
+  "Act",
+  "Nov",
+  "Dec",
+];
 
-// switch (days) {
-//   case "1":
-//     "Monday";
-//     break;
-//   case "2":
-//     "Tuesday";
-//     break;
-//   case "3":
-//     "Wednesday";
-//     break;
-//   case "4":
-//     "Thursday";
-//     break;
-//   case "5":
-//     "Friday";
-//     break;
-//   case "6":
-//     "saturday";
-//     break;
-//   case "7":
-//     "Sunday";
-// }
+const days = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thusday",
+  "Friday",
+  "Satday",
+  "Sunday",
+];
 
 setInterval(() => {
   const date = new Date();
   dt.textContent =
-    date.getDate() + "/" + date.getDay() + "/" + date.getFullYear();
-  time.textContent =
-    date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    date.getDate() +
+    "/" +
+    months[date.getMonth()] +
+    "/" +
+    date.getFullYear() +
+    "/" +
+    days[date.getDay()];
+  // time.textContent =
+  // date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+
+  // hours.textContent = date.getHours() ;
+  // minuts.textContent = date.getMinutes();
+  // seconds.textContent = date.getSeconds();
 });
+
+function updateClock() {
+  let now = new Date();
+
+  let hours = now.getHours();
+  let minuts = now.getMinutes();
+  let seconds = now.getSeconds();
+
+  let ampm = hours >= 12 ? "PM" : "Am";
+
+  hours = hours % 12;
+  hours = hours ? hours : 12;
+
+  hours = hours < 10 ? "0" + hours : hours;
+  minuts = minuts < 10 ? "0" + minuts : minuts;
+  seconds = seconds < 10 ? "0" + seconds : seconds;
+
+  document.getElementById("hours").innerText = hours;
+  document.getElementById("minutes").innerText = minuts;
+  document.getElementById("second").innerText = seconds;
+  document.getElementById("ampm").innerText = ampm;
+}
+
+setInterval(updateClock, 1000);
