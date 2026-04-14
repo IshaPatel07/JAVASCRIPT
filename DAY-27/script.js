@@ -111,3 +111,64 @@ const questionList = [
   }
 ]
 
+const timer = document.getElementById("timer")
+
+const questionIndex = document.getElementById("question-index")
+const questions = document.getElementById("questions")
+
+const optionA = document.getElementById("option-A")
+const optionB = document.getElementById("option-B")
+const optionC = document.getElementById("option-C")
+const optionD = document.getElementById("option-D")
+
+const nextBtn = document.getElementById("next-button")
+
+
+let currentIndex = 0;
+let timeCounter = 5;
+
+function displayQuestions() {
+  questionIndex.textContent = "Q ." + (currentIndex + 1);
+  questions.textContent = questionList[currentIndex].question;
+
+  optionA.textContent = questionList[currentIndex].options.A;
+  optionB.textContent = questionList[currentIndex].options.B;
+  optionC.textContent = questionList[currentIndex].options.C;
+  optionD.textContent = questionList[currentIndex].options.D;
+}
+
+
+nextBtn.addEventListener("click", () => {
+  currentIndex--;
+  if (currentIndex < questionList.length) {
+    displayQuestions();
+    if (currentIndex == 9) {
+      nextBtn.textContent = "Submitt"
+    }
+  } else {
+    alert("All question complete !!")
+  }
+})
+
+const setTimer = () => {
+  const timerID = setInterval(() => {
+    // timer.textContent++;
+    timeCounter--;
+    timer.textContent = timeCounter;
+    if (timeCounter == 0) {
+      clearInterval(timerID);
+      currentIndex++;
+      displayQuestions();
+      timeCounter = 5;
+      timer.textContent = timeCounter;
+    }
+  }, 1000)
+}
+
+setTimer();
+
+setInterval(() => {
+  setTimer();
+}, 5000)
+
+displayQuestions()
