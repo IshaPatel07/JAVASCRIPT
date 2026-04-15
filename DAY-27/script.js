@@ -126,6 +126,7 @@ const nextBtn = document.getElementById("next-button")
 
 let currentIndex = 0;
 let timeCounter = 5;
+let intervalId;
 
 function displayQuestions() {
   questionIndex.textContent = "Q ." + (currentIndex + 1);
@@ -150,25 +151,46 @@ nextBtn.addEventListener("click", () => {
   }
 })
 
-const setTimer = () => {
-  const timerID = setInterval(() => {
-    // timer.textContent++;
+
+function startTimer() {
+  intervalId = setInterval(() => {
     timeCounter--;
     timer.textContent = timeCounter;
-    if (timeCounter == 0) {
-      clearInterval(timerID);
-      currentIndex++;
-      displayQuestions();
-      timeCounter = 5;
-      timer.textContent = timeCounter;
-    }
+
   }, 1000)
+  startTimer();
 }
 
-setTimer();
+startTimer();
 
-setInterval(() => {
-  setTimer();
-}, 5000)
+displayQuestions();
 
-displayQuestions()
+// const setTimer = () => {
+//   const timerID = setInterval(() => {
+//     // timer.textContent++;
+//     timeCounter--;
+//     timer.textContent = timeCounter;
+//     if (timeCounter <= 0 || currentIndex >= questionList.length - 1) {
+//       clearInterval(timerID);
+//       if (currentIndex < questionList.length - 1) {
+//         currentIndex++;
+//         displayQuestions();
+//         timeCounter = 5;
+//         timer.textContent = timeCounter;
+//         setTimer();
+//       }
+//     }
+//   }, 1000)
+// }
+
+// setTimer();
+
+
+// const stopId = setInterval(() => {
+//   setTimer();
+//   if (currentIndex > questionList.length - 1) {
+//     console.log("stoped...!")
+//     clearInterval(stopId);
+//   }
+// }, 5000)
+
