@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Quize!!</title>
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,12 +13,12 @@
     />
   </head>
 
-  <body>
+  <body style="height: 100vh">
     <section class="p-2">
-      <div class="container">
+      <div class="container quize-container">
         <h2 class="text-center">Complete All Queiz</h2>
         <div class="text-center">
-          <p class="text-center fs-4 text-info">Time left</p>
+          <p class="text-center fs-4 text-danger">Time left</p>
           <p id="timer" class="fs-2 fw-bold text-danger">0</p>
         </div>
         <hr class="my-4" />
@@ -64,6 +65,10 @@
             </div>
             <div class="my-3 text-end">
               <button id="next-button" class="btn btn-primary">next-></button>
+            </div>
+            <div>
+              <h2 id="score-dis"></h2>
+              <h2 id="pass-fail"></h2>
             </div>
           </div>
         </div>

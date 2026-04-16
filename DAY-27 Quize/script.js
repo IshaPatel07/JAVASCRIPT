@@ -193,6 +193,16 @@ function scoreCounter() {
     }
   });
   console.log(score);
+  document.getElementById("score-dis").textContent =
+    "Your score:" + score + "/" + questionList.length;
+
+  alert("your score :" + score);
+
+  if (score >= 6) {
+    document.getElementById("pass-fail").textContent = "you'r passed";
+  } else {
+    document.getElementById("pass-fail").textContent = "you'r failed";
+  }
 }
 
 optBoxA.addEventListener("click", () => {
