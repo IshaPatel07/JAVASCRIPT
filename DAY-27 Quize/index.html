@@ -16,10 +16,12 @@
   <body style="height: 100vh">
     <section class="p-2">
       <div class="container quize-container">
-        <h2 class="text-center">Complete All Queiz</h2>
+        <h2 class="text-center fs-1 fw-bold text-white">Complete All Queiz</h2>
         <div class="text-center">
-          <p class="text-center fs-4 text-danger">Time left</p>
-          <p id="timer" class="fs-2 fw-bold text-danger">0</p>
+          <span class="text-center fs-4 text-danger-emphasis fw-bold"
+            >Time left :</span
+          >
+          <span id="timer" class="fs-2 fw-bold text-danger">0</span>
         </div>
         <hr class="my-4" />
         <div
@@ -27,46 +29,34 @@
         >
           <div class="col-8">
             <div class="mb-4">
-              <span id="question-index" class="fs-3">Q.1</span>
-              <p id="questions" class="fs-3">
+              <span id="question-index" class="fs-3 fw-bolder">Q.1</span>
+              <p id="questions" class="fs-3 fw-bolder">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus
                 illum eaque ratione. Veniam, similique tempore.
               </p>
             </div>
-            <div>
-              <div
-                id="opt-box-A"
-                class="bg-light p-2 text-dark rounded border border-1 fs-5 my-2"
-              >
-                <span>A</span>
-                <span id="option-A">Lorem ipsum dolor sit amet.</span>
+            <div> 
+              <div id="opt-box-A" class="op">
+                <span>A : </span>
+                <span id="option-A"> Lorem ipsum dolor sit amet.</span>
               </div>
-              <div
-                id="opt-box-B"
-                class="bg-light p-2 text-dark rounded border border-1 fs-5 my-2"
-              >
-                <span>B</span>
+              <div id="opt-box-B" class="op">
+                <span>B :</span>
                 <span id="option-B">Lorem ipsum dolor sit amet.</span>
               </div>
-              <div
-                id="opt-box-C"
-                class="bg-light p-2 text-dark rounded border border-1 fs-5 my-2"
-              >
-                <span>C</span>
+              <div id="opt-box-C" class="op">
+                <span>C :</span>
                 <span id="option-C">Lorem ipsum dolor sit amet.</span>
               </div>
-              <div
-                id="opt-box-D"
-                class="bg-light p-2 text-dark rounded border border-1 fs-5 my-2"
-              >
-                <span>D</span>
+              <div id="opt-box-D" class="op">
+                <span>D :</span>
                 <span id="option-D">Lorem ipsum dolor sit amet.</span>
               </div>
             </div>
-            <div class="my-3 text-end">
-              <button id="next-button" class="btn btn-primary">next-></button>
+            <div class="my-3 text-center">
+              <button id="next-button" class="sub-btn">next-></button>
             </div>
-            <div>
+            <div class="scor">
               <h2 id="score-dis"></h2>
               <h2 id="pass-fail"></h2>
             </div>
