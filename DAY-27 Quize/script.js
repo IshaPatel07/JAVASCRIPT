@@ -139,7 +139,7 @@ const optBoxD = document.getElementById("opt-box-D");
 const nextBtn = document.getElementById("next-button");
 
 let currentIndex = 0;
-let timeCounter = 60;
+let timeCounter = 60; 
 let intervalId;
 let ansList = [];
 let score = 0;
