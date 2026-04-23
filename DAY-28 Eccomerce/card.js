@@ -1,30 +1,42 @@
-const CardDivision = document.getElementById("Cart-div")
+const cartDivision = document.getElementById("cart-div");
+const totalPrice = document.getElementById("total-price");
 
-function displayCardsProducts() {
-    const carts = JSON.parse(localStorage.getItem("carts")) || [];
-    // CardDivision.innerHTML = "";
-    carts.map(element => {
-        const div = document.createElement("div");
-        div.innerHTML = `<div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src=${element.images[0]} class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">${element.title}</h5>
-                            <p class="card-text">Price  ₹${(element.price * 86).toFixed(2)}</p>
-                            <p class="card-text">${element.category}</p>
-                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>`
-        CardDivision.appendChild(div)
-    })
+function removeCards(i) {
+  let arr = JSON.parse(localStorage.getItem("carts")) || [];
+  arr.splice(i, 1);
+  localStorage.setItem("carts", JSON.stringify(arr));
+  displayCardproducts();
 }
 
-// console.log(localStorage.getItem("carts"))
+function displayCardproducts() {
+  let total = 0;
+  const carts = JSON.parse(localStorage.getItem("carts")) || [];
+  cartDivision.innerHTML = "";
+  carts.map((card, i) => {
+    total = total + card.price * 86;
+    const div = document.createElement("div");
+    div.innerHTML = `<div class="card mb-3" style="max-width: 540px">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src=${card.images[0]} class="img-fluid rounded-start" alt="..." />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">${card.title}</h5>
+                <p class="card-text">
+                Qty - ${card.qty}
+                </p>
+                <p class="card-text">
+                 ₹${(card.price * 86).toFixed(2)}/-
+                </p>
+              </div>
+              <button onclick="removeCards(${i})" class="btn btn-danger">Remove</button>
+            </div>
+          </div>
+        </div>`;
+    cartDivision.appendChild(div);
+  });
+  totalPrice.textContent = "Total : ₹" + total.toFixed(2) + "/-";
+}
 
-
-displayCardsProducts();
+displayCardproducts();
